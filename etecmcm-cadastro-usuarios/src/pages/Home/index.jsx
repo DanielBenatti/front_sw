@@ -1,5 +1,6 @@
 import './style.css'
 import Lixeira from '../../assets/lixeira.png'
+import Editar from '../../assets/editar.png'
 
 function Home() {
   const usuarios = [{
@@ -33,7 +34,7 @@ function Home() {
           </div>
           <div class="card-footer">
             <button>
-              <img src={Lixeira} alt="" />
+              <img src={Editar} alt="" />
             </button>
             <button>
               <img src={Lixeira} alt="" />
