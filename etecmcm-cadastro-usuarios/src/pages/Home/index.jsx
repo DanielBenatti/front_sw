@@ -16,7 +16,7 @@ function Home() {
   
   return (
    <div className='container'>
-      <form class='fomulario'>
+      <form class='formulario'>
         <h1>Cadastro de Usuários</h1>
         <input name='nome' type="text" />
         <input name='idade' type="number" />
@@ -31,9 +31,14 @@ function Home() {
             <p>Idade: {usuario.idade}</p>
             <p>Email: {usuario.email}</p>
           </div>
-          <button>
-            <img src={Lixeira} alt="" />
-          </button>
+          <div class="card-footer">
+            <button>
+              <img src={Lixeira} alt="" />
+            </button>
+            <button>
+              <img src={Lixeira} alt="" />
+            </button>
+          </div>
         </div>
       ))}
    </div>
