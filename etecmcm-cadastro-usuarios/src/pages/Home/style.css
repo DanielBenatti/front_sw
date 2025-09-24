@@ -1,141 +1,169 @@
-/* Estilo geral da página */
+/* ====== Estilo Geral ====== */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #111; /* Preto de fundo */
+  font-family: 'Arial', sans-serif;
+  background-color: #000; /* fundo preto */
   color: #fff;
   margin: 0;
   padding: 0;
 }
 
-/* Formulário */
-.formulario {
-  background: linear-gradient(135deg, #ffa500, #ffcc00); /* Laranja -> Amarelo */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
   padding: 20px;
-  max-width: 500px;
-  margin: 30px auto;
+  background-color: #111; /* preto suave */
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  color: #111;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.4); /* leve brilho amarelo */
 }
 
-.formulario h2 {
+h1 {
   text-align: center;
+  color: #FFD700; /* amarelo ouro */
   margin-bottom: 20px;
-  color: #111;
 }
 
-.formulario input, 
-.formulario select, 
-.formulario textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  font-size: 1rem;
+/* ====== Formulário ====== */
+.formulario {
+  display: flex;
+  flex-direction: column; /* inputs empilhados verticalmente */
+  gap: 15px;              /* espaço entre inputs e botão */
+  margin-bottom: 30px;
+  align-items: center;    /* centraliza horizontalmente */
 }
 
-.formulario input:focus, 
-.formulario textarea:focus {
-  box-shadow: 0 0 8px #111;
+.input {
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #FFD700; /* borda amarela */
+  background-color: #222;
+  color: #fff;
+  width: 70%;               /* largura maior */
+  box-sizing: border-box;
 }
 
-.formulario button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 10px;
-  background: #111;
-  color: #ffcc00;
-  font-size: 1rem;
+.input::placeholder {
+  color: #ccc;
+}
+
+.btn-cadastrar {
+  padding: 12px 25px;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  background-color: #000;
+  color: #FFD700;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  width: 150px;
 }
 
-.formulario button:hover {
-  background: #ffcc00;
-  color: #111;
+.btn-cadastrar:hover {
+  background-color: #FFD700;
+  color: #000;
 }
 
-/* Cards */
-.card {
-  background: #222;
-  border-left: 6px solid #ffa500;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 15px auto;
-  max-width: 400px;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transition: transform 0.2s ease;
-
+/* ====== Cards ====== */
+.cards {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 15px;
+}
+
+.card {
+  background-color: #111;
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  border-left: 5px solid #FFD700; /* linha amarela lateral */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #FFD700;
 }
 
-.card h3 {
-  margin: 0;
-  font-size: 1.4rem;
-  color: #ffcc00;
-}
-
-.card p {
-  margin: 5px 0;
-  font-size: 1rem;
-  color: #ddd;
-}
-
-/* Rodapé dos cards */
+/* ====== Card Footer ====== */
 .card-footer {
   display: flex;
-  justify-content: flex-end;
   gap: 10px;
   margin-top: 10px;
-  align-items: center;
 }
 
-/* Botão circular */
-.card-footer button {
-  width: 48px;
-  height: 48px;
+/* ====== Botões de Ícones ====== */
+.btn-icon {
+  background: none;
   border: none;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffcc00 0%, #ffa500 100%);
-  border: 2px solid rgba(0,0,0,0.18);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.55);
   cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  transition: transform 0.2s;
 }
 
-/* Ícone dentro do botão */
-.card-footer button img {
-  width: 20px;
-  height: 20px;
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+
+.btn-icon img {
+  width: 24px;
+  height: 24px;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* branco sobre fundo colorido */
-  transition: 0.3s;
 }
 
-/* Hover do botão */
-.card-footer button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+/* ====== Formulário de Edição ====== */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* Hover do ícone */
-.card-footer button:hover img {
-  filter: brightness(1) sepia(1) hue-rotate(-20deg) saturate(5); /* amarelo/laranja */
-  transform: scale(1.15);
+.input-edit {
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #FFD700;
+  background-color: #222;
+  color: #fff;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+/* ====== Botões Salvar / Cancelar ====== */
+.btn-save {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-save:hover {
+  background-color: #fff700;
+}
+
+.btn-cancel {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-cancel:hover {
+  background-color: #FFD700;
+  color: #000;
 }
